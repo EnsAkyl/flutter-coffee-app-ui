@@ -1,0 +1,136 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Align(
+        alignment: Alignment.topCenter,
+        child: Column(
+          children: [
+            Image.asset("assets/images/coffee_cup_sign_in_up.png", height: 220),
+            const Text(
+              "Sign Up",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+            ),
+            const Text(
+              "Let's create you an account.",
+              style: TextStyle(fontSize: 14.5, fontWeight: FontWeight.w400),
+            ),
+            SizedBox(height: 60),
+            Container(
+              width: 360,
+              child: TextField(
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  labelText: "PHONE NUMBER",
+                  prefixIcon: Icon(Icons.phone_android),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 15),
+            Container(
+              width: 360,
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: "PASSWORD",
+                  prefixIcon: Icon(Icons.password),
+                  suffixIcon: Icon(Icons.remove_red_eye),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 15),
+            Container(
+              width: 360,
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: "RE-PASSWORD",
+                  prefixIcon: Icon(Icons.password),
+                  suffixIcon: Icon(Icons.remove_red_eye),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 40),
+            Container(
+              width: 320,
+              height: 49,
+              decoration: BoxDecoration(
+                color: Color(0xff55433C),
+                borderRadius: BorderRadius.circular(30),
+              ),
+        
+              child: Padding(
+                padding: const EdgeInsets.only(left: 130, right: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Sign In",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Spacer(flex: 2),
+                    CircleAvatar(
+                      backgroundColor: Color(0xffA97C37),
+                      child: Icon(Icons.arrow_forward, color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 25),
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: "Already have an account? ",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      color: Colors.black,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "Sign In",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: Color(0xffA97C37),
+                      decorationThickness: 1.5,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      color: Color(0xffA97C37),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

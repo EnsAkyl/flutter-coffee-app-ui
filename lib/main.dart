@@ -1,4 +1,4 @@
-import 'package:coffeeapp/pages/sign_in_page.dart';
+import 'package:coffeeapp/pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title:"Only Coffee",
       theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       useMaterial3: true,),
-      home: const SignInPage()
+      home: const SignUpPage()
     );
   }
 }
