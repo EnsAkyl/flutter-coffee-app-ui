@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-class SignUpPage extends StatefulWidget {
+class SignUpPage extends ConsumerWidget {
+  static SignUpPage builder(BuildContext context, GoRouterState state) =>
+      SignUpPage();
+
   const SignUpPage({super.key});
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
-}
-
-class _SignUpPageState extends State<SignUpPage> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Align(
@@ -78,7 +78,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 color: Color(0xff55433C),
                 borderRadius: BorderRadius.circular(30),
               ),
-        
+
               child: Padding(
                 padding: const EdgeInsets.only(left: 130, right: 5),
                 child: Row(
