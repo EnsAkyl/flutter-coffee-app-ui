@@ -57,7 +57,7 @@ class SignInPage extends ConsumerWidget {
             ),
             const Gap(20),
             CommonButton(
-              padding: EdgeInsets.only(left: 100, right: 5),
+              padding: EdgeInsets.only(left: 130, right: 5),
               containerHeight: 49,
               containerWidth: 320,
               onTap: () {},

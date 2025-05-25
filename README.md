@@ -1,6 +1,7 @@
-# ☕ Coffee App 
-Bu proje, Flutter kullanılarak geliştirilen bir mobil uygulamadır. Sadece arayüz üzerine odaklanılarak yapılmış bir projedir. 
+# ☕ Coffee App
 
+Bu proje, Flutter kullanılarak geliştirilen bir mobil uygulamadır. Sadece arayüz üzerine
+odaklanılarak yapılmış bir projedir.
 
 ## 🧭 Kullanılan Teknolojiler
 
@@ -10,11 +11,17 @@ Bu proje, Flutter kullanılarak geliştirilen bir mobil uygulamadır. Sadece ara
 - Gap
 
 ## 📱 Ekranlar
+
 Projede sadece aşağıdaki ekranlar bulunmaktadır:
+
 - Karşılama Ekranı
 - Giriş Ekranı
 - Kayıt Ekranı
 
 ## 📸 Ekran Görüntüleri
 
-![img.png](img.png) ![img_1.png](img_1.png) ![img_2.png](img_2.png)
+<p float="left">
+    <img src="img.png" width="30%" />
+    <img src="img_3.png" width="30%" />
+    <img src="img_2.png" width="30%" />
+</p>
