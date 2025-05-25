@@ -23,5 +23,5 @@ Projede sadece aşağıdaki ekranlar bulunmaktadır:
 <p float="left">
     <img src="img.png" width="30%" />
     <img src="img_3.png" width="30%" />
-    <img src="img_2.png" width="30%" />
+    <img src="img_1.png" width="30%" />
 </p>
