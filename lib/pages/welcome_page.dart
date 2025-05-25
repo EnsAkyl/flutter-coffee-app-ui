@@ -1,6 +1,10 @@
+import 'package:coffeeapp/config/config.dart';
+import 'package:coffeeapp/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../widgets/widget.dart';
 
 class WelcomePage extends ConsumerWidget {
   static WelcomePage builder(BuildContext context, GoRouterState state) =>
@@ -9,64 +13,41 @@ class WelcomePage extends ConsumerWidget {
   const WelcomePage({super.key});
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final colors = context.colorScheme;
+    final deviceSize = context.deviceSize;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
-            Align(
-              alignment: Alignment.center,
-              child: Image.asset("assets/images/coffee_app_logo.png", scale: 4),
+            CenterImage(
+              height: 75,
+              imagePath: "assets/images/coffee_app_logo.png",
             ),
-            SizedBox(height: 14),
-            Image.asset(
-              "assets/images/welcomepage_coffee_image.png",
+            const Gap(14),
+            CenterImage(
               height: 350,
+              imagePath: "assets/images/welcomepage_coffee_image.png",
             ),
-            const Text(
-              "Find your favorite",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+            DisplayText(text: "Find your favorite", fontSize: 25),
+            DisplayText(
+              text: "Coffee Taste!",
+              fontSize: 38,
+              fontWeight: FontWeight.bold,
             ),
-            const Text(
-              "Coffee Taste!",
-              style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
+            const Gap(3),
+            DisplayText(
+              text:
+                  "We're coffee shop, beer and wine bar, \n& event space for performing arts",
+              fontSize: 14,
             ),
-            SizedBox(height: 3),
-            const Text(
-              "We’re coffee shop, beer and wine bar, \n& event space for performing arts",
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 15),
-            Container(
-              height: 49,
-              width: 172,
-              decoration: BoxDecoration(
-                color: Color(0xff55433C),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 24, right: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Get Started",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                      ),
-                    ),
-                    Spacer(flex: 2),
-                    CircleAvatar(
-                      backgroundColor: Color(0xffA97C37),
-                      child: Icon(Icons.arrow_forward, color: Colors.white),
-                    ),
-                  ],
-                ),
-              ),
+            const Gap(15),
+            CommonButton(
+              onTap: () => context.push(RouteLocation.signIn),
+              containerHeight: 49,
+              containerWidth: 173,
+              text: "Get Started",
             ),
           ],
         ),
