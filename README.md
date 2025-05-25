@@ -1,16 +1,20 @@
-# coffeeapp
+# ☕ Coffee App 
+Bu proje, Flutter kullanılarak geliştirilen bir mobil uygulamadır. Sadece arayüz üzerine odaklanılarak yapılmış bir projedir. 
 
-A new Flutter project.
 
-## Getting Started
+## 🧭 Kullanılan Teknolojiler
 
-This project is a starting point for a Flutter application.
+- Flutter
+- Go Router
+- RiverPod
+- Gap
 
-A few resources to get you started if this is your first Flutter project:
+## 📱 Ekranlar
+Projede sadece aşağıdaki ekranlar bulunmaktadır:
+- Karşılama Ekranı
+- Giriş Ekranı
+- Kayıt Ekranı
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📸 Ekran Görüntüleri
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![img.png](img.png) ![img_1.png](img_1.png) ![img_2.png](img_2.png)
