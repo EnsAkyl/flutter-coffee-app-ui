@@ -13,6 +13,7 @@ class CommonButton extends StatelessWidget {
     required this.text,
     this.fontSize,
     this.fontWeight,
+    required this.padding,
   });
 
   final double containerHeight;
@@ -21,22 +22,22 @@ class CommonButton extends StatelessWidget {
   final String text;
   final double? fontSize;
   final FontWeight? fontWeight;
+  final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: containerHeight,
-      width: containerWidth,
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: containerHeight,
+        width: containerWidth,
 
-      decoration: BoxDecoration(
-        color: Color(0xff55433C),
-        borderRadius: BorderRadius.circular(25),
-      ),
-      child: InkWell(
-        onTap: onTap,
-
+        decoration: BoxDecoration(
+          color: Color(0xff55433C),
+          borderRadius: BorderRadius.circular(30),
+        ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 24, right: 5),
+          padding: padding,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,7 +48,7 @@ class CommonButton extends StatelessWidget {
                 fontSize: fontSize ?? 16,
                 fontWeight: fontWeight ?? FontWeight.w600,
               ),
-              const Gap(15),
+              const Spacer(flex: 2),
               CircleAvatar(
                 backgroundColor: Color(0xffA97C37),
                 child: Icon(Icons.arrow_forward, color: Colors.white),

@@ -1,5 +1,4 @@
 import 'package:coffeeapp/config/config.dart';
-import 'package:coffeeapp/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -14,8 +13,6 @@ class WelcomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final colors = context.colorScheme;
-    final deviceSize = context.deviceSize;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -44,6 +41,7 @@ class WelcomePage extends ConsumerWidget {
             ),
             const Gap(15),
             CommonButton(
+              padding: EdgeInsets.only(left: 24, right: 5),
               onTap: () => context.push(RouteLocation.signIn),
               containerHeight: 49,
               containerWidth: 173,

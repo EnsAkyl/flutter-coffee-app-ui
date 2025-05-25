@@ -1,136 +1,98 @@
+import 'package:coffeeapp/config/config.dart';
+import 'package:coffeeapp/widgets/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
 class SignInPage extends ConsumerWidget {
   static SignInPage builder(BuildContext context, GoRouterState state) =>
       SignInPage();
+
   const SignInPage({super.key});
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 0),
-          child: Align(
-            alignment: Alignment.center,
-            child: Column(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            CenterImage(
+              alignment: Alignment.topCenter,
+              height: 220,
+              imagePath: "assets/images/coffee_cup_sign_in_up.png",
+            ),
+            DisplayText(
+              text: "Sign In",
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+            ),
+            DisplayText(text: "We've already met!", fontSize: 14.5),
+            const Gap(30),
+            CommonTextField(
+              title: "Phone Number",
+              hintText: "555 555 55 55",
+              prefixIcon: Icon(Icons.phone_android),
+            ),
+
+            const Gap(15),
+            CommonTextField(
+              title: "Password",
+              hintText: "Password",
+              prefixIcon: Icon(Icons.password),
+              isPassword: true,
+            ),
+            const Gap(15),
+            const Text(
+              "Forgot password?",
+              style: TextStyle(
+                fontSize: 14.5,
+                color: Color(0xffA97C37),
+                decoration: TextDecoration.underline,
+                decorationColor: Color(0xffA97C37),
+                decorationThickness: 1.5,
+              ),
+            ),
+            const Gap(20),
+            CommonButton(
+              padding: EdgeInsets.only(left: 100, right: 5),
+              containerHeight: 49,
+              containerWidth: 320,
+              onTap: () {},
+              text: "Sign In",
+            ),
+            const Gap(20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "assets/images/coffee_cup_sign_in_up.png",
-                  height: 220,
-                ),
-                const Text(
-                  "Sign In",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-                ),
-                const Text(
-                  "We've already met!",
-                  style: TextStyle(fontSize: 14.5, fontWeight: FontWeight.w400),
-                ),
-                SizedBox(height: 60),
-                Container(
-                  width: 360,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: "PHONE NUMBER",
-                      prefixIcon: Icon(Icons.phone_android),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 15),
-                Container(
-                  width: 360,
-                  child: TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: "PASSWORD",
-                      prefixIcon: Icon(Icons.password),
-                      suffixIcon: Icon(Icons.remove_red_eye),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 12),
-                const Text(
-                  "Forgot password?",
+                Text(
+                  "Don't have an account?",
                   style: TextStyle(
-                    fontSize: 14.5,
-                    color: Color(0xffA97C37),
-                    decoration: TextDecoration.underline,
-                    decorationColor: Color(0xffA97C37),
-                    decorationThickness: 1.5,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    color: Colors.black,
                   ),
                 ),
-                SizedBox(height: 90),
-
-                Container(
-                  width: 320,
-                  height: 49,
-                  decoration: BoxDecoration(
-                    color: Color(0xff55433C),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-
-                  child: Padding(
-                    padding: const EdgeInsets.only(left:130, right: 5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "Sign In",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Spacer(flex: 2),
-                        CircleAvatar(
-                          backgroundColor: Color(0xffA97C37),
-                          child: Icon(Icons.arrow_forward, color: Colors.white),
-                        ),
-                      ],
+                const Gap(5),
+                InkWell(
+                  onTap: () => context.push(RouteLocation.signUp),
+                  child: Text(
+                    "Sign Up",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: Color(0xffA97C37),
+                      decorationThickness: 1.5,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      color: Color(0xffA97C37),
                     ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Don't have an account ? ",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: Colors.black,
-                        ),
-                      ),
-                      TextSpan(
-                        text: "Sign Up",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          decorationColor: Color(0xffA97C37),
-                          decorationThickness: 1.5,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: Color(0xffA97C37),
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ],
             ),
-          ),
+          ],
         ),
       ),
     );
